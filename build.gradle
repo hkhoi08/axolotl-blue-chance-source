@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.17-SNAPSHOT'
+	id 'net.fabricmc.fabric-loom' version '1.17-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -11,20 +11,12 @@ base {
 }
 
 repositories {
-	// Thêm repo khác ở đây nếu bạn cần thư viện phụ trợ
-}
-
-loom {
-	// Minecraft 26.2 dùng thẳng Mojang mappings chính thức (không còn Yarn)
-	// nên KHÔNG cần dòng "mappings loom.officialMojangMappings()" tách riêng,
-	// nó đã là mặc định cho version này.
 }
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings loom.officialMojangMappings()
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }
 
 processResources {
@@ -36,7 +28,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 21
+	it.options.release = 25
 }
 
 java {
