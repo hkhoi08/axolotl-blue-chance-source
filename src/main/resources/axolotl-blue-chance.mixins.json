@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "com.example.axolotlbluechance.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"AxolotlMixin"
+	],
+	"client": [],
+	"server": [],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
