@@ -11,10 +11,13 @@ base {
 }
 
 repositories {
+	// Thêm repo khác ở đây nếu bạn cần thư viện phụ trợ
 }
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	// KHONG can dong "mappings" nua: Minecraft 26.2 da unobfuscated (khong con obfuscation),
+	// nen khong can bo mappings rieng nhu cac ban truoc day.
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }

@@ -45,7 +45,8 @@ public abstract class AxolotlMixin {
 		if (result instanceof Axolotl baby) {
 			// Random rieng cua mod, khong dung chung voi random noi bo cua entity
 			if (Math.random() < AxolotlBlueChanceMod.BLUE_CHANCE) {
-				baby.setVariant(Axolotl.Variant.BLUE);
+				// setVariant la private nen phai goi qua Invoker interface
+				((AxolotlVariantSetterAccessor) baby).axolotlBlueChance$setVariant(Axolotl.Variant.BLUE);
 				AxolotlBlueChanceMod.LOGGER.debug("Da ep axolotl con thanh mau xanh (blue)");
 			}
 		}
